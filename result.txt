@@ -1,0 +1,3 @@
+Value Of X : 10, 
+ Value Of Y : 20, 
+ Value Of Z : 30
