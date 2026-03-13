@@ -3,6 +3,8 @@ package main
 import (
 	"abc/xyz/Test"
 	"fmt"
+
+	"github.com/Pallinder/go-randomdata"
 )
 
 func main() {
@@ -10,6 +12,8 @@ func main() {
 	var abc string
 	var def int
 	def, abc = Test.Test("abc", 10)
-	fmt.Print(abc, "  ", def)
+	fmt.Println(abc, "  ", def)
+	fmt.Println(randomdata.PhoneNumber())
+	fmt.Println(randomdata.Email())
 
 }
