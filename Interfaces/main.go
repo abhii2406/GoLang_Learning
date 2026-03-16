@@ -13,6 +13,11 @@ type saver interface {
 	Save() error
 }
 
+type embeddedInterface interface {
+	saver
+	Display()
+}
+
 func main() {
 	title, content := getData()
 	newNote, err := note.New(title, content)
@@ -21,14 +26,16 @@ func main() {
 		return
 	}
 	// fmt.Printf("Title : %s\nContent : %s\nCreated At : %s", newNote.Title, newNote.Content, newNote.CreatedAt)
-	newNote.Display()
+	// newNote.Display()
 	// err = newNote.Save()
 	// if err != nil {
 	// 	fmt.Print(err)
 	// 	return
 	// }
 
-	err = saveData(newNote)
+	// newNote.Display()
+	// err = saveData(newNote)
+	err = operations(newNote)
 	if err != nil {
 		fmt.Print("Fail to save")
 		return
@@ -44,13 +51,15 @@ func main() {
 		return
 	}
 	// fmt.Printf("Title : %s\nContent : %s\nCreated At : %s", newNote.Title, newNote.Content, newNote.CreatedAt)
-	todo.Display()
+	// todo.Display()
 	// err = todo.Save()
 	// if err != nil {
 	// 	fmt.Print(err)
 	// 	return
 	// }
-	err = saveData(todo)
+	// todo.Display()
+	// err = saveData(todo)
+	err = operations(todo)
 	if err != nil {
 		fmt.Print("Fail to save")
 		return
@@ -59,6 +68,10 @@ func main() {
 
 }
 
+func operations(abc embeddedInterface) error {
+	abc.Display()
+	return saveData(abc)
+}
 func saveData(abc saver) error {
 	err := abc.Save()
 	return err
