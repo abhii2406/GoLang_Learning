@@ -38,4 +38,5 @@ func AnyTypeValue(value interface{}) {
 		fmt.Println("String : ", stringVal)
 		return
 	}
+
 }
