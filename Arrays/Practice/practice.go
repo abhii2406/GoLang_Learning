@@ -47,4 +47,10 @@ func main() {
 	}
 	products = append(products, p)
 	fmt.Println(products)
+
+	array := []int{1, 2, 3}
+	array1 := []int{4, 5, 6}
+
+	array = append(array, array1...)
+	fmt.Println(array)
 }
