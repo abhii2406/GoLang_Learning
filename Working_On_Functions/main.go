@@ -14,6 +14,15 @@ func main() {
 	getD := getDouble()
 	fmt.Println(getD(2))
 
+	/*in main function
+	 Anoonymous function
+	functions without name
+	*/
+
+	arr = *makeDoubleByPassingFunc(&arr, func(num int) int {
+		return num * 2
+	})
+	fmt.Println(arr)
 }
 
 func makeDouble(arr *[]int) *[]int {
