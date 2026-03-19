@@ -53,3 +53,11 @@ func double(a int) int {
 func getDouble() func(int) int {
 	return double
 }
+
+//recursion function
+func factorial(n int) int {
+	if n == 0 {
+		return 1
+	}
+	return n * factorial(n-1)
+}

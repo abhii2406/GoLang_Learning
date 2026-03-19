@@ -7,7 +7,7 @@ type intMap map[int]string
 func main() {
 	names := []string{}
 	names = append(names, "Abhi")
-	names = append(names, "Patil")
+	names = append(names, "Ab")
 
 	for i, val := range names {
 		fmt.Println(i, " ", val)
@@ -24,7 +24,7 @@ func main() {
 	m := make(intMap, 2)
 
 	m[0] = "Abhi"
-	// m[2] = "Ab"
+	m[2] = "Ab"
 
 	for key, val := range m {
 		fmt.Println(key, "Map", val)
