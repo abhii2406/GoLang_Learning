@@ -61,3 +61,22 @@ func factorial(n int) int {
 	}
 	return n * factorial(n-1)
 }
+
+// variadic function
+
+/*
+  func maim(){
+		s :=sum(4,6,8,6)  --> here 4 is for num in sum argumnet other 6,8,6 is storing arr variable
+		num :=[]int{6,8,6}
+		s : sum(4,num...)  --> here ... acts as slice passing value one by one to sum functions
+ 	 }
+*/
+
+func sum(num int, arr ...int) int { // here ... works at collect all operator
+	sum := 0
+
+	for _, val := range arr {
+		sum += val
+	}
+	return sum
+}
